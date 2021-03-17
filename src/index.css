@@ -11,3 +11,158 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+header nav {
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  header nav button {
+    padding: 0.5rem;
+    color: black;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; }
+    header nav button:hover {
+      background-color: black;
+      color: white; }
+
+.song-container {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .song-container img {
+    width: 20%;
+    border-radius: 50%;
+   }
+  .song-container h2 {
+    padding: 3rem 1rem 1rem 1rem; }
+  .song-container h3 {
+    font-size: 1rem; }
+
+.player {
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column; }
+  .player .time-control {
+    display: flex;
+    align-items: center;
+    width: 50%; }
+    .player .time-control p {
+      padding: 1rem;
+      font-size: 1rem; }
+    .player .time-control .track {
+      width: 100%;
+      height: 1rem;
+      overflow: hidden;
+      background: lightblue;
+      position: relative;
+      border-radius: 1rem; }
+      .player .time-control .track input {
+        width: 100%;
+        padding: 1rem 0rem;
+        -webkit-appearance: none;
+        background: transparent;
+        cursor: pointer;
+        outline: none; }
+      .player .time-control .track input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px; }
+      .player .time-control .track input [type="range"]::-moz-range-thumb {
+        -webkit-appearance: none;
+        background: transparent;
+        border: none; }
+      .player .time-control .track .anime-track {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #dbdbdb;
+        pointer-events: none;
+        transition: all 0.3s ease; }
+
+.play-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 30%;}
+
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: white;
+  box-shadow: 2px 2px 30px #4e4e4e66;
+  transition: all 0.3s linear;
+  transform: translateX(-100%);
+  opacity: 0; }
+  .library.acitive-library {
+    transform: translateX(0);
+    opacity: 1; }
+  .library::-webkit-scrollbar {
+    width: 5px; }
+  .library::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 20px;
+    border: transparent; }
+  .library h2 {
+    padding: 2rem; }
+  .library .library-songs .library-song {
+    padding: 1rem 2rem;
+    display: flex;
+    border-left: 5px solid white;
+    align-items: center;
+    cursor: pointer; }
+    .library .library-songs .library-song .song-description {
+      padding-left: 1rem; }
+      .library .library-songs .library-song .song-description h3 {
+        font-size: 1rem; }
+      .library .library-songs .library-song .song-description h4 {
+        font-size: 0.7rem; }
+    .library .library-songs .library-song img {
+      width: 30%;
+      border-radius: 3px; }
+    .library .library-songs .library-song:hover h3,
+    .library .library-songs .library-song:hover h4 {
+      color: #757575; }
+    .library .library-songs .library-song:hover img {
+      opacity: 75%; }
+  .library .library-songs .library-song.selected {
+    background: rgba(110, 110, 110, 0.2);
+    border-left: 5px solid #292929; }
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%; }
+
+  .play-control {
+    width: 80%; }
+
+  .library {
+    width: 100%; }
+
+  nav button {
+    z-index: 10; }
+
+  .song-container img {
+    width: 60%; } }
+
+/*# sourceMappingURL=test.css.map */
